@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover</title>
+    <link rel="stylesheet" href="/css/feed.css">
+    <link rel="stylesheet" href="/css/trader-nav.css">
+    <link rel="stylesheet" href="/css/footer_trader_profile.css">
+
+
+    <script src="https://kit.fontawesome.com/2814ece5e8.js" crossorigin="anonymous"></script>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+
+
+    <link
+        href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i|Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+        integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+
+
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,700|Poiret+One" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,300,400,500,700" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Oswald:200,400,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script> -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&family=Inter:wght@300&family=Rubik:wght@300&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+
+    <div class="navbar">
+
+        <div class="logo">
+            <img src="/img/WhatsApp Image 2022-02-21 at 11.27.30.jpeg" alt="">
+        </div>
+        <ul>
+
+
+            <a class="button-navbar btn" href="/landingPage" role="button">
+                <span>Home</span>
+                <div class="icon">
+                    <i class="fa-solid fa-house"></i>
+                </div>
+            </a>
+            <a class="button-navbar btn" href="./traderlounge" role="button">
+                <span>Traders</span>
+                <div class="icon">
+                    <i class="fa-solid fa-copy"></i>
+                </div>
+            </a>
+            <a class="button-navbar btn" href="/discover" role="button">
+                <span>Discover</span>
+                <div class="icon">
+                    <i class="fa-solid fa-compass"></i>
+                </div>
+            </a>
+            <a class="button-navbar btn" href="/portfolio" role="button">
+                <span>Portfolio</span>
+                <div class="icon">
+                    <i class="fa-solid fa-chart-pie"></i>
+                </div>
+            </a>
+            <div class="bell">
+                <i class="fa-solid fa-bell"></i>
+            </div>
+
+            <div class="dropdown">
+                <div class="dropbtn"> <i class="fa-solid fa-user"></i>
+                </div>
+                <div class="dropdown-content">
+                    <a href="/profile">Profile</a>
+                    <a href="#">Wallet</a>
+                    <a href="#">Settings</a>
+
+                    <a href="/">Logout</a>
+                </div>
+            </div>
+        </ul>
+    </div>
+
+
+
+    
+    <div id="feed" style="margin-top:68px ;">
+
+        <div class="container">
+            <div class="middle-panel">
+
+
+
+                <div class="post create">
+                    <div class="post-top">
+                        <div class="dp">
+                            <img src="./images/dp.jpg" alt="">
+                        </div>
+
+                        <form action="/api/uploadpost" method="POST">
+                            <input type="text" name="post_text" placeholder="What's on your mind" /><br>
+                            <button>Submit</button>
+                        </form>
+
+
+                        <!-- <input type="button" value=""> -->
+                        <!-- <button name="post-btn" id="post-btn">Post</button> -->
+                    </div>
+
+
+
+                    <div class="post-bottom">
+                        <!-- <div class="action">
+                            <i class="fa fa-video"></i>
+                            <span>Live video</span>
+                        </div> -->
+                        <div class="action">
+                            <i class="fa fa-image"></i>
+                            <span>Photo/Video</span>
+                        </div>
+                        <!-- <div class="action">
+                            <i class="fa fa-smile"></i>
+                            <span>Feeling/Activity</span>
+                        </div> -->
+                    </div>
+                </div>
+
+               
+
+                <% if (postItems.length> 0) { %>
+                    <% postItems.forEach(postItems=> { %>
+                        <div class="post">
+                            <div class="post-top">
+                                <div class="dp">
+                                    <img dp1 src="./images/dp.jpg" alt="">
+                                    <div class="tick-icon"><i class="fa-solid fa-circle-check"></i></div>
+                                </div>
+                                <div class="post-info">
+                                    <a href="/traderProfile" class="trader-link">
+                                        <p class="name">
+                                            <%= usersubmit.username %>
+                                        </p>
+                                    </a>
+                                    <span class="time"><%= postItems.createdAt %> ago</span>
+                                </div>
+                                <i class="fas fa-ellipsis-h"></i>
+                            </div>
+
+                            <div class="post-content">
+                                <%= postItems.post_text %>
+                            </div>
+
+                            <div class="post-bottom">
+                                <div class="action">
+                                    <i class="far fa-thumbs-up"></i>
+                                    <span>Like</span>
+                                </div>
+                                <div class="action">
+                                    <i class="far fa-comment"></i>
+                                    <span>Comment</span>
+                                </div>
+                                <div class="action">
+                                    <i class="fa fa-share"></i>
+                                    <span>Share</span>
+                                </div>
+                            </div>
+                        </div>
+                        <% }) %>
+                            <% } else { %>
+                                <p>No posts for the moment.</p>
+                                <% } %>
+
+                                    <div class="post">
+                                        <div class="post-top">
+                                            <div class="dp">
+                                                <img src="./images/dp.jpg" alt="">
+                                            </div>
+                                            <div class="post-info">
+                                                <a href="/traderProfile" class="trader-link">
+                                                    <p class="name">Ayush Singla</p>
+                                                </a>
+                                                <span class="time">2 days ago</span>
+                                            </div>
+                                            <i class="fas fa-ellipsis-h"></i>
+                                        </div>
+
+                                        <div class="post-content">
+                                            Bitcoin’s stealth rally erases its losses for the year
+                                            <img src="images/post1.jpeg" />
+                                        </div>
+
+                                        <div class="post-bottom">
+                                            <div class="action">
+                                                <i class="far fa-thumbs-up"></i>
+                                                <span>Like</span>
+                                            </div>
+                                            <div class="action">
+                                                <i class="far fa-comment"></i>
+                                                <span>Comment</span>
+                                            </div>
+                                            <div class="action">
+                                                <i class="fa fa-share"></i>
+                                                <span>Share</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="post">
+                                        <div class="post-top">
+                                            <div class="dp">
+                                                <img src="./images/dp.jpg" alt="">
+                                            </div>
+                                            <div class="post-info">
+                                                <a href="/traderProfile" class="trader-link">
+                                                    <p class="name">Sanu Das</p>
+                                                </a>
+                                                <span class="time">2 days ago</span>
+                                            </div>
+                                            <i class="fas fa-ellipsis-h"></i>
+                                        </div>
+
+                                        <div class="post-content">
+                                            Lat week profit: +5% <br>
+                                            Copy my trade to get such profits
+                                            <img src="images/post2.jpg" />
+                                        </div>
+
+                                        <div class="post-bottom">
+                                            <div class="action">
+                                                <i class="far fa-thumbs-up"></i>
+                                                <span>Like</span>
+                                            </div>
+                                            <div class="action">
+                                                <i class="far fa-comment"></i>
+                                                <span>Comment</span>
+                                            </div>
+                                            <div class="action">
+                                                <i class="fa fa-share"></i>
+                                                <span>Share</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="post">
+                                        <div class="post-top">
+                                            <div class="dp">
+                                                <img src="./images/dp.jpg" alt="">
+                                            </div>
+                                            <div class="post-info">
+                                                <a href="/traderProfile" class="trader-link">
+                                                    <p class="name">Ayush Singla</p>
+                                                </a>
+                                                <span class="time">2 days ago</span>
+                                            </div>
+                                            <i class="fas fa-ellipsis-h"></i>
+                                        </div>
+
+                                        <div class="post-content">
+                                            Bitcoin’s stealth rally erases its losses for the year
+                                            <img src="images/post1.jpeg" />
+                                        </div>
+
+                                        <div class="post-bottom">
+                                            <div class="action">
+                                                <i class="far fa-thumbs-up"></i>
+                                                <span>Like</span>
+                                            </div>
+                                            <div class="action">
+                                                <i class="far fa-comment"></i>
+                                                <span>Comment</span>
+                                            </div>
+                                            <div class="action">
+                                                <i class="fa fa-share"></i>
+                                                <span>Share</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="post">
+                                        <div class="post-top">
+                                            <div class="dp">
+                                                <img src="./images/dp.jpg" alt="">
+                                            </div>
+                                            <div class="post-info">
+                                                <a href="/traderProfile" class="trader-link">
+                                                    <p class="name">Sanu Das</p>
+                                                </a>
+                                                <span class="time">2 days ago</span>
+                                            </div>
+                                            <i class="fas fa-ellipsis-h"></i>
+                                        </div>
+
+                                        <div class="post-content">
+                                            Lat week profit: +5% <br>
+                                            Copy my trade to get such profits
+                                            <img src="images/post2.jpg" />
+                                        </div>
+
+                                        <div class="post-bottom">
+                                            <div class="action">
+                                                <i class="far fa-thumbs-up"></i>
+                                                <span>Like</span>
+                                            </div>
+                                            <div class="action">
+                                                <i class="far fa-comment"></i>
+                                                <span>Comment</span>
+                                            </div>
+                                            <div class="action">
+                                                <i class="fa fa-share"></i>
+                                                <span>Share</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="post">
+                                        <div class="post-top">
+                                            <div class="dp">
+                                                <img src="./images/dp.jpg" alt="">
+                                            </div>
+                                            <div class="post-info">
+                                                <a href="/traderProfile" class="trader-link">
+                                                    <p class="name">Ayush Singla</p>
+                                                </a>
+                                                <span class="time">2 days ago</span>
+                                            </div>
+                                            <i class="fas fa-ellipsis-h"></i>
+                                        </div>
+
+                                        <div class="post-content">
+                                            Bitcoin’s stealth rally erases its losses for the year
+                                            <img src="images/post1.jpeg" />
+                                        </div>
+
+                                        <div class="post-bottom">
+                                            <div class="action">
+                                                <i class="far fa-thumbs-up"></i>
+                                                <span>Like</span>
+                                            </div>
+                                            <div class="action">
+                                                <i class="far fa-comment"></i>
+                                                <span>Comment</span>
+                                            </div>
+                                            <div class="action">
+                                                <i class="fa fa-share"></i>
+                                                <span>Share</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="post">
+                                        <div class="post-top">
+                                            <div class="dp">
+                                                <img src="./images/dp.jpg" alt="">
+                                            </div>
+                                            <div class="post-info">
+                                                <a href="/traderProfile" class="trader-link">
+                                                    <p class="name">Sanu Das</p>
+                                                </a>
+                                                <span class="time">2 days ago</span>
+                                            </div>
+                                            <i class="fas fa-ellipsis-h"></i>
+                                        </div>
+
+                                        <div class="post-content">
+                                            Lat week profit: +5% <br>
+                                            Copy my trade to get such profits
+                                            <img src="images/post2.jpg" />
+                                        </div>
+
+                                        <div class="post-bottom">
+                                            <div class="action">
+                                                <i class="far fa-thumbs-up"></i>
+                                                <span>Like</span>
+                                            </div>
+                                            <div class="action">
+                                                <i class="far fa-comment"></i>
+                                                <span>Comment</span>
+                                            </div>
+                                            <div class="action">
+                                                <i class="fa fa-share"></i>
+                                                <span>Share</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="post">
+                                        <div class="post-top">
+                                            <div class="dp">
+                                                <img src="./images/dp.jpg" alt="">
+                                            </div>
+                                            <div class="post-info">
+                                                <a href="/traderProfile" class="trader-link">
+                                                    <p class="name">Ayush Singla</p>
+                                                </a>
+                                                <span class="time">2 days ago</span>
+                                            </div>
+                                            <i class="fas fa-ellipsis-h"></i>
+                                        </div>
+
+                                        <div class="post-content">
+                                            Bitcoin’s stealth rally erases its losses for the year
+                                            <img src="images/post1.jpeg" />
+                                        </div>
+
+                                        <div class="post-bottom">
+                                            <div class="action">
+                                                <i class="far fa-thumbs-up"></i>
+                                                <span>Like</span>
+                                            </div>
+                                            <div class="action">
+                                                <i class="far fa-comment"></i>
+                                                <span>Comment</span>
+                                            </div>
+                                            <div class="action">
+                                                <i class="fa fa-share"></i>
+                                                <span>Share</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="post">
+                                        <div class="post-top">
+                                            <div class="dp">
+                                                <img src="./images/dp.jpg" alt="">
+                                            </div>
+                                            <div class="post-info">
+                                                <a href="/traderProfile" class="trader-link">
+                                                    <p class="name">Sanu Das</p>
+                                                </a>
+                                                <span class="time">2 days ago</span>
+                                            </div>
+                                            <i class="fas fa-ellipsis-h"></i>
+                                        </div>
+
+                                        <div class="post-content">
+                                            Lat week profit: +5% <br>
+                                            Copy my trade to get such profits
+                                            <img src="images/post2.jpg" />
+                                        </div>
+
+                                        <div class="post-bottom">
+                                            <div class="action">
+                                                <i class="far fa-thumbs-up"></i>
+                                                <span>Like</span>
+                                            </div>
+                                            <div class="action">
+                                                <i class="far fa-comment"></i>
+                                                <span>Comment</span>
+                                            </div>
+                                            <div class="action">
+                                                <i class="fa fa-share"></i>
+                                                <span>Share</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+            </div>
+            <div class="right-panel">
+
+                <div class="friends-section">
+                    <h4>Similar Traders</h4>
+                    <a class='friend' href="/traderProfile">
+                        <div class="dp">
+                            <img src="./images/dp.jpg" alt="">
+                        </div>
+                        <p class="name">Ayush</p>
+                    </a>
+
+                    <a class='friend' href="/traderProfile">
+                        <div class="dp">
+                            <img src="./images/dp.jpg" alt="">
+                        </div>
+                        <p class="name">Sanu</p>
+                    </a>
+
+                    <a class="friend" href="/traderProfile">
+                        <div class="dp">
+                            <img src="./images/dp.jpg" alt="">
+                        </div>
+                        <p class="name">Das</p>
+                    </a>
+
+                    <a class="friend" href="/traderProfile">
+                        <div class="dp">
+                            <img src="./images/sanu.jpeg" alt="">
+                        </div>
+                        <p class="name">Sanu Das</p>
+                    </a>
+
+                    <a class="friend" href="/traderProfile">
+                        <div class="dp">
+                            <img src="./images/sanu.jpeg" alt="">
+                        </div>
+                        <p class="name">Ayush Raj</p>
+                    </a>
+
+                    <a class="friend" href="/traderProfile">
+                        <div class="dp">
+                            <img src="./images/sanu.jpeg" alt="">
+                        </div>
+                        <p class="name">Ramesh Pkh</p>
+                    </a>
+
+                    <a class="friend" href="/traderProfile">
+                        <div class="dp">
+                            <img src="./images/sanu.jpeg" alt="">
+                        </div>
+                        <p class="name">Suresh</p>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <section id="contact" style="position: static;">
+            <div class="whole" style="margin-top: 0px;">
+                <div class="part1">
+                    <div class="one">
+                        <h1>LEGAL</h1>
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms Of Use</a>
+                        <a href="#">License</a>
+                        <a href="#">Terms And Conditions</a>
+                    </div>
+                    <div class="one">
+                        <h1>SERVICES</h1>
+                        <a href="#">Email Marketing</a>
+                        <a href="#">Campaign</a>
+                        <a href="#">Branding</a>
+                        <a href="#">Offline</a>
+                    </div>
+                    <div class="one">
+                        <h1>ABOUT</h1>
+                        <a href="#">Benefits</a>
+                        <a href="/about-us">Team</a>
+                        <a href="#">Career</a>
+                        <a href="#">Our Story</a>
+                    </div>
+                    <div class="one">
+                        <h1>USEFUL LINKS</h1>
+                        <a href="#">Features</a>
+                        <a href="#">Home</a>
+                        <a href="/contact-use">Contacts</a>
+                        <a href="#">Trading</a>
+                    </div>
+                </div>
+                <div class="icon1">
+                    <i class="fa-brands fa-instagram" style="height: 0px;"></i>
+                    <i class="fa-brands fa-facebook" style="height: 0px;"></i>
+                    <i class="fa-brands fa-twitter" style="height: 0px;"></i>
+                    <i class="fa-brands fa-telegram" style="height: 0px;"></i>
+                    <i class="fa-brands fa-linkedin-in" style="height: 0px;"></i>
+                    <p style="float: right;">email:<a href="#">zrading@gmail.com</a></p>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+    </div>
+</body>
+</html>
