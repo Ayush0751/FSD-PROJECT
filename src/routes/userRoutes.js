@@ -1,0 +1,13 @@
+const express = require('express');
+const usercontrollers = require('../controllers/usercontrollers');
+const router = express.Router();
+router.route('/api/register').post(usercontrollers.register);
+// router.route('/api/copyDetail').post(usercontrollers.copyDetail);
+router.post('/copyDetail', usercontrollers.copyDetail);
+router.get('/traderProfile/:id', usercontrollers.traderDetail);
+router.get('/portfolio/:id',usercontrollers.updatetrader);
+router.post('/uploadpost', usercontrollers.postCreate);
+// router.get('/discover', usercontrollers.postDetails);
+router.post('/uploadpostTrader', usercontrollers.postCreateTrader);
+// router.get('/traderProfile', usercontrollers.postDetailsTrader);
+module.exports = router;
