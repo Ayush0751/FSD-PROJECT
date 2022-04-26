@@ -1,0 +1,206 @@
+:root {
+    --bs-blue: var(--bs-heading-gray);
+    --bs-indigo: #6610f2;
+    --bs-purple: #6f42c1;
+    --bs-pink: #d63384;
+    --bs-red: #dc3545;
+    --bs-orange: #fd7e14;
+    --bs-yellow: #ffc107;
+    --bs-green: #28a745;
+    --bs-teal: #20c997;
+    --bs-cyan: #17a2b8;
+    --bs-white: #fff;
+    --bs-heading-gray: #8a8d93;
+    --bs-subheading-gray: #6a6c70;
+    --bs-gray-dark: #343a40;
+    --bs-primary: #db6574;
+    --bs-secondary: #8a8d93;
+    --bs-success: #28a745;
+    --bs-info: #17a2b8;
+    --bs-warning: #ffc107;
+    --bs-danger: #dc3545;
+    --bs-light: #f8f9fa;
+    --bs-dark: #343a40;
+    --bs-bck-color: #22252a;
+    --bs-shade-grey: #2d3035;
+    --bs-font-sans-serif: "Muli", -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+  }
+
+
+#trader-container{
+    display: flex;
+     position: relative;
+    margin-top: 77px;
+}
+/* body{
+    background-color: var(--bs-bck-color);
+} */
+.trader-profile{
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    position: fixed;
+    margin-top: 5%; 
+    /* border: 2px solid white;   
+    border-radius: 5px; */
+}
+
+.trader-profile img{
+    width: 54%;
+margin: 5%;
+border-radius: 100%;
+height: 152px;
+}
+
+.trader-name{
+    color: dodgerblue;
+    margin: 2%;
+}
+
+.copy-btn{
+    margin-top: 5%;
+    margin-bottom: 1%;
+    /* padding: 4px 25px; */
+    /* border-radius: 8px; */
+    background: var(--bs-heading-gray);
+    color: #ffffff;
+    font-size: 25px;
+    padding: 1% 15%;
+    text-decoration: none;
+    border-radius: 7px;
+}
+
+.copy-btn:hover{
+    cursor: pointer;
+    background: #3cb0fd;
+    background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+    text-decoration: none;
+  }
+
+.trader-data{
+    display: flex;
+    /* align-items: center ;
+    justify-items: center; */
+    justify-content: center;
+    /* text-align: center; */
+    background-color: var(--bs-bck-color);
+    /* background-color: rgb(111, 181, 243); */
+    width: 80%;
+    height: 1000px;
+    margin-left: 22%;
+}
+
+.trader-nav h3{
+    color: var(--bs-heading-gray);
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font-size: 30px;
+    position: fixed;
+    /* left: 10%; */
+    background-color: var(--bs-bck-color);
+    border-bottom: 2px solid var(--bs-heading-gray);
+    /* margin-left: 20%; */
+    padding: 0% 0% 1% 0%;
+    text-decoration: none;
+    
+}
+a{
+    text-decoration: none;
+    color: var(--bs-heading-gray);
+}
+
+.trader-data a{
+    text-decoration: none;
+    color: var(--bs-heading-gray);
+}
+a:hover{
+
+    color: #32627e;
+    /* text-decoration: underline; */
+}
+
+/* a:visited{
+    text-decoration: underline;
+} */
+
+.feed-btn{
+    border-bottom: 2px solid var(--bs-heading-gray);
+}
+
+
+.trader-data a:hover{
+    color: #dddddd;
+    text-decoration: underline;
+}
+
+.trader-data a:active{
+    text-decoration: underline;
+    color: green;
+}
+/* .trader-data a:visited{
+    text-decoration: underline;
+    color: red;
+} */
+
+#feed{
+    /* background-color: var(--bs-heading-gray); */
+    height: 500px;
+    width: 100%;
+    padding-top: 10%;
+}
+#stats{
+    background-color: var(--bs-bck-color);
+    padding-top: 10%;
+    height: 500px;
+    width: 100%;
+    color: var(--bs-heading-gray);
+}
+#portfolio{
+    padding-top: 10%;
+    color: var(--bs-heading-gray);
+    background-color: var(--bs-bck-color);
+    height: 1000px;
+    width: 100%;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #555252;
+    text-align: left;
+    padding: 15px;
+    /* align-items: center; */
+    text-align: center;
+    /* justify-content: center; */
+  }
+  
+  tr:nth-child(even) {
+    background-color: #555252;
+  }
+
+th{
+    font-size: 2rem;
+}
+td{
+    padding: 15px;
+}
+
+/* .end{
+    width: 100%;
+    height: 500px;
+} */
