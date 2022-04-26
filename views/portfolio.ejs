@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+    <script src="https://kit.fontawesome.com/2814ece5e8.js" crossorigin="anonymous"></script>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+
+
+    <link
+        href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i|Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+        integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+
+
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,700|Poiret+One" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,300,400,500,700" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Oswald:200,400,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="./css/portfolio.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="navbar">
+
+        <div class="logo">
+            <img src="./img2/logomain.png" alt="">
+        </div>
+        <ul>
+
+
+            <a class="button-navbar btn" href="./landingPage" role="button">
+                <span>Home</span>
+                <div class="icon">
+                    <i class="fa-solid fa-house"></i>
+                </div>
+            </a>
+            <a class="button-navbar btn" href="./traderlounge" role="button">
+                <span>Traders</span>
+                <div class="icon">
+                    <i class="fa-solid fa-copy"></i>
+                </div>
+            </a>
+            <a class="button-navbar btn" href="discover" role="button">
+                <span>Discover</span>
+                <div class="icon">
+                    <i class="fa-solid fa-compass"></i>
+                </div>
+            </a>
+            <a class="button-navbar btn" href="./portfolio" role="button">
+                <span>Portfolio</span>
+                <div class="icon">
+                    <i class="fa-solid fa-chart-pie"></i>
+                </div>
+            </a>
+            <div class="bell">
+                <i class="fa-solid fa-bell"></i>
+            </div>
+
+            <div class="dropdown">
+                <div class="dropbtn"> <i class="fa-solid fa-user"></i>
+                </div>
+                <div class="dropdown-content">
+                    <a href="/profile">Profile</a>
+                    <a href="#">Wallet</a>
+                    <a href="#">Settings</a>
+                    <a href="/">Logout</a>
+                </div>
+            </div>
+        </ul>
+    </div>
+
+    <section>
+        <div class="row">
+            <div class="invest-box box">
+                <div class="wallet-widget card">
+                    <h5>INVESTED AMOUNT</h5>
+                    <h2><span class="box-amount clr1">3100.00</span> <sub class="clr1">INR</sub></h2>
+                    <p>= 65 %</p>
+                </div>
+            </div>
+            <div class="remaining-box box">
+                <div class="wallet-widget card">
+                    <h5>REMAINING</h5>
+                    <h2><span class="box-amount clr2">550.00</span> <sub class="clr2">INR</sub></h2>
+                    <p>= 35 %</p>
+                </div>
+            </div>
+            <div class="total-box box">
+                <div class="wallet-widget card">
+                    <h5>TOTAL</h5>
+                    <h2><span class="box-amount clr3">3650.00</span> <sub class="clr3">INR</sub></h2>
+                    <p>= 100 %</p>
+                </div>
+            </div>
+            <div class="pl-box box">
+                <div class="wallet-widget card">
+                    <h5>DAILY &nbspP/L</h5>
+                    <h2><span class="box-amount clr4">3100.00</span> <sub class="clr4">INR</sub></h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="open-pos">
+
+            <div class="sec-cat">
+                <p>Open Positions</p>
+            </div>
+            <table id="myTable" class="searchable sortable">
+                <thead>
+                    <tr>
+                        <!--When a header is clicked, run the sortTable function, with a parameter, 0 for sorting by names, 1 for sorting by country:-->
+                        <th onclick="sortTable(0)">Trader</th>
+                        <th onclick="sortTable(0)">Amount Invested</th>
+                        <th onclick="sortTable(1)">Current ROI</th>
+                        <th onclick="sortTable(1)">Start Time</th>
+                        <th onclick="sortTable(1)">Check</th>
+                        
+                    </tr>
+                </thead>
+               
+                <tbody class="gg">
+                    <% if (openorder.length> 0 ) { %>
+                        <% openorder.forEach(openorder=> { %>
+                            <% if (openorder.open) { %>
+                    <tr class="sort">
+                        <td class="table-name">
+                            <span><img src="./img2/sanupic.jpg" alt=""></span>
+                            <span class="td-name"> <%=openorder.trader%></span>
+                            <p class="td-user-name"><%=openorder.name%></p>
+                        </td>
+                        <td class="tb-amt"><%=openorder.amountInvest%></td>
+                        <td class="tb-roi">5%</td>
+                        <td class="tb-start"><%=openorder.createdAt%></td>
+                      <td class="tb-check"><a href="/portfolio/<%=openorder._id%>"><p class="close">Close</p></a></td>
+                    </tr>
+                    <%}%>
+                    <% }) %>
+                        <% } else { %>
+                            <p>There are Open Orders to display...</p>
+                            <% } %>
+                </tbody>
+            </table>
+        </div>
+
+    </section>
+    <section>
+        <div class="chart-box">
+            <div class="portfolio-graph">
+                <canvas id="myChart"></canvas>
+                <div id="legend"></div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="table-box">
+
+            <div class="sec-cat">
+                <p>History</p>
+            </div>
+            <table id="myTable" class="searchable sortable">
+                <thead>
+                    <tr>
+                        <!--When a header is clicked, run the sortTable function, with a parameter, 0 for sorting by names, 1 for sorting by country:-->
+                        <th onclick="sortTable(0)">Trader</th>
+                        <th onclick="sortTable(0)">Amount Invested</th>
+                        <th onclick="sortTable(1)">Amount Recieved</th>
+                        <th onclick="sortTable(1)">Return</th>
+                        <th onclick="sortTable(1)">Start Time</th>
+                        <th onclick="sortTable(1)">End Time</th>
+                        
+                    </tr>
+                </thead>
+                <!-- <tr>
+                    <td>Berglunds snabbkop</td>
+                    <td>Sweden</td>
+                </tr> -->
+                <tbody>
+                    <% if (openorder.length> 0 ) { %>
+                        <% openorder.forEach(openorder=> { %>
+                            <% if (!openorder.open) { %>
+                    <tr class="sort">
+                        <td class="table-name">
+                            <!-- <span><img src="./img2/sanupic.jpg" alt=""></span> -->
+                            <span class="td-name"><%=openorder.trader%></span>
+                            <p class="td-user-name"><%=openorder.Tusername%></p>
+                        </td>
+                        <td class="tb-place"><%=openorder.amountInvest%></td>
+                        <td class="tb-score">480</td>
+                        <td class="tb-return">5%</td>
+                        <td class="tb-pl"><%=openorder.createdAt%></td>
+                        <td class="tb-copiers"><%=openorder.updatedAt%></td>
+                    </tr>
+                    <%}%>
+                    <% }) %>
+                        <% } else { %>
+                            <p>There are Open Orders to display...</p>
+                            <% } %>
+                </tbody>
+            </table>
+        </div>
+
+    </section>
+
+    <footer>
+
+        <div class="whole">
+            <div class="next">
+                <div class="one">
+                    <h1>LEGAL</h1>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms Of Use</a>
+                    <a href="#">License</a>
+                    <a href="#">Terms And Conditions</a>
+                </div>
+                <div class="one">
+                    <h1>SERVICES</h1>
+                    <a href="#">Email Marketing</a>
+                    <a href="#">Campaign</a>
+                    <a href="#">Branding</a>
+                    <a href="#">Offline</a>
+                </div>
+                <div class="one">
+                    <h1>ABOUT</h1>
+                    <a href="#">Benefits</a>
+                    <a href="/about-us">Team</a>
+                    <a href="#">Career</a>
+                    <a href="#">Our Story</a>
+                </div>
+                <div class="one">
+                    <h1>USEFUL LINKS</h1>
+                    <a href="#">Features</a>
+                    <a href="#">Home</a>
+                    <a href="/contact-use">Contacts</a>
+                    <a href="#">Trading</a>
+                </div>
+            </div>
+            <div class="footer-icon">
+                <i class="fa-brands fa-instagram" style="height: 0px;"></i>
+                <i class="fa-brands fa-facebook" style="height: 0px;"></i>
+                <i class="fa-brands fa-twitter" style="height: 0px;"></i>
+                <i class="fa-brands fa-telegram" style="height: 0px;"></i>
+                <i class="fa-brands fa-linkedin-in" style="height: 0px;"></i>
+                <p style="float: right;">email:<a href="#">zrading@gmail.com</a></p>
+            </div>
+        </div>
+    </footer>
+    <script src="./js/portfolio.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+
+        var ctx = new Chart(myChart, {
+            type: "doughnut",
+            data: {
+                labels: ["krsanu", "raut.p", "rajayu", "sandy0", "kkumar"],
+                datasets: [{
+                    label: 'The chart data is in percentage',
+                    data: ['15', '5', '25', '35', '20'],
+                    backgroundColor: ["#b91d47", "#00aba9", "#2b5797", "#e8c3b9", "#1e7145"],
+                    borderColor: ["#b91d47", "#00aba9", "#2b5797", "#e8c3b9", "#1e7145"]
+                }]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: "The chart data is in percentage"
+                },
+
+                legend: false,
+                legendCallback: function (myChart) {
+                    var ul = document.createElement('ul');
+                    var borderColor = myChart.data.datasets[0].borderColor;
+                    var dataValue = myChart.data.datasets[0].data;
+                    myChart.data.labels.forEach(function (label, index) {
+                        ul.innerHTML += `
+                        <li>
+                            <span style="background-color: ${borderColor[index]}";></span> ${label} ${dataValue[index]}
+                        </li>`;
+
+                    });
+                    return ul.outerHTML;
+                }
+
+            }
+        });
+        legend.innerHTML = ctx.generateLegend();
+    </script>
+</body>
+
+</html>

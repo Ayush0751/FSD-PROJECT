@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/2814ece5e8.js" crossorigin="anonymous"></script>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+
+
+    <link
+        href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i|Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+        integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+
+
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,700|Poiret+One" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,300,400,500,700" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Oswald:200,400,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&family=Inter:wght@300&family=Rubik:wght@300&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/index.css">
+
+
+</head>
+
+<body>
+    <div class="navbar">
+
+        <div class="logo">
+            <img src="./img2/logomain.png" alt="">
+        </div>
+        <ul>
+            <a class="button-navbar btn" href="#" role="button">
+                <span>Home</span>
+                <div class="icon">
+                    <i class="fa-solid fa-house"></i>
+                </div>
+            </a>
+            <a class="button-navbar btn" href="./traderlounge" role="button">
+                <span>Traders</span>
+                <div class="icon">
+                    <i class="fa-solid fa-copy"></i>
+                </div>
+            </a>
+            <a class="button-navbar btn" href="/discover" role="button">
+                <span>Discover</span>
+                <div class="icon">
+                    <i class="fa-solid fa-compass"></i>
+                </div>
+            </a>
+            <a class="button-navbar btn" href="./portfolio" role="button">
+                <span>Portfolio</span>
+                <div class="icon">
+                    <i class="fa-solid fa-chart-pie"></i>
+                </div>
+            </a>
+            <div class="bell">
+                <i class="fa-solid fa-bell"></i>
+            </div>
+
+            <div class="dropdown">
+                <div class="dropbtn"> <i class="fa-solid fa-user"></i>
+                </div>
+                <div class="dropdown-content">
+                    <a href="/profile">Profile</a>
+                    <a href="#">Wallet</a>
+                    <a href="#">Settings</a>
+
+                    <a href="/">Logout</a>
+                </div>
+            </div>
+        </ul>
+    </div>
+    <div class="product-category">
+        <p>
+            Recommended Traders
+        </p>
+    </div>
+    <section class="product">
+
+        <button class="pre-btn"><i class="fa-solid fa-angle-right"></i></button>
+        <button class="nxt-btn"><i class="fa-solid fa-angle-right"></i></button>
+
+        <div class="product-container">
+            <% if (traderlist.length> 0) { %>
+                <% traderlist.forEach(traderlist=> { %>
+                    <div class="card">
+                        <div class="front">
+                            <div class="front_ba">
+                                <div class="front_bb">
+                                    <div class="up-front">
+                                        <div class="front-pic">
+                                            <img src="./img2/sanupic.jpg" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="back">
+
+                                        <div class="user-back-detail">
+                                            <span class="user-name">
+                                                <%=traderlist.name%>
+                                            </span>
+                                            <span class="user-id">
+                                                <%=traderlist.Tusername%>
+                                            </span>
+                                        </div>
+                                        <div class="back-bio">
+                                            <p>
+                                                <%=traderlist.bio%>
+                                            </p>
+                                        </div>
+                                        <div class="user-copiers">
+                                            <span class="num-copier">
+                                                <%=traderlist.copiernumber%>
+                                            </span> <span class="copier">Copiers</span>
+                                            <div class="copier-detail">(In
+                                                last month)</div>
+                                        </div>
+                                        <div class="rating">
+                                            <span class="rating-num">
+                                                <%=traderlist.rating%>
+                                            </span><span class="rating-star">★</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="down-front">
+                                <a href="/traderProfile/<%=traderlist.Tusername%>"><button
+                                            class="front__text-hover">Copy</button></a>
+                                <div class="pic-name">
+                                    <%=traderlist.name%>
+                                </div>
+
+                                <div class="user-avgprofit">
+                                    <i class="fa-solid fa-arrow-up"></i> <span class="profit-percent">
+                                        <%=traderlist.profit%>%
+                                    </span> <span class="return">Return</span>
+                                    <div class="profit-detail">(in last Month)</div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <% }) %>
+                        <% } else { %>
+                            <p>There are no Traders to display...</p>
+                            <% } %>
+        </div>
+    </section>
+    <section>
+        <div class="section-cat">
+            <p>Portfolio</p>
+        </div>
+        <div class="portfolio-graph">
+            <canvas id="myChart"></canvas>
+            <div id="legend"></div>
+        </div>
+    </section>
+    <section class="top-gainers">
+        <div class="section-type">
+            <p>Top gainers of this week</p>
+        </div>
+        <div class="gainer-container">
+            <div class="gainer-left">
+                <div class="gainer-box">
+                    <div class="gainer-pic">
+                        <img src="./img2/sanupic.jpg" alt="">
+                    </div>
+                    <div class="gainer-data">
+                        <div class="gainer-name">
+                            <p>Sanu Das</p>
+                        </div>
+                        <div class="place-pin"><i class="fa-solid fa-map-pin"></i></div>
+
+                        <div class="gainer-place">
+                            <p>New Delhi</p>
+                        </div>
+                        <div class="gainer-bio">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis.</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="gainer-box">
+                    <div class="gainer-pic">
+                        <img src="./img2/sanupic.jpg" alt="">
+                    </div>
+                    <div class="gainer-data">
+                        <div class="gainer-name">
+                            <p>Sanu Das</p>
+                        </div>
+                        <div class="place-pin"><i class="fa-solid fa-map-pin"></i></div>
+
+                        <div class="gainer-place">
+                            <p>New Delhi</p>
+                        </div>
+                        <div class="gainer-bio">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis.</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="gainer-box">
+                    <div class="gainer-pic">
+                        <img src="./img2/sanupic.jpg" alt="">
+                    </div>
+                    <div class="gainer-data">
+                        <div class="gainer-name">
+                            <p>Sanu Das</p>
+                        </div>
+                        <div class="place-pin"><i class="fa-solid fa-map-pin"></i></div>
+
+                        <div class="gainer-place">
+                            <p>New Delhi</p>
+                        </div>
+                        <div class="gainer-bio">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <hr class="gainer-line">
+            <div class="gainer-right">
+                <div class="gainer-box">
+                    <div class="gainer-pic">
+                        <img src="./img2/sanupic.jpg" alt="">
+                    </div>
+                    <div class="gainer-data">
+                        <div class="gainer-name">
+                            <p>Sanu Das</p>
+                        </div>
+                        <div class="place-pin"><i class="fa-solid fa-map-pin"></i></div>
+                        <div class="gainer-place">
+                            <p>New Delhi</p>
+                        </div>
+                        <div class="gainer-bio">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis.</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="gainer-box">
+                    <div class="gainer-pic">
+                        <img src="./img2/sanupic.jpg" alt="">
+                    </div>
+                    <div class="gainer-data">
+                        <div class="gainer-name">
+                            <p>Sanu Das</p>
+                        </div>
+                        <div class="place-pin"><i class="fa-solid fa-map-pin"></i></div>
+
+                        <div class="gainer-place">
+                            <p>New Delhi</p>
+                        </div>
+                        <div class="gainer-bio">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis.</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="gainer-box">
+                    <div class="gainer-pic">
+                        <img src="./img2/sanupic.jpg" alt="">
+                    </div>
+                    <div class="gainer-data">
+                        <div class="gainer-name">
+                            <p>Sanu Das</p>
+                        </div>
+                        <div class="place-pin"><i class="fa-solid fa-map-pin"></i></div>
+
+                        <div class="gainer-place">
+                            <p>New Delhi</p>
+                        </div>
+                        <div class="gainer-bio">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+
+        <div class="whole">
+            <div class="next">
+                <div class="one">
+                    <h1>LEGAL</h1>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms Of Use</a>
+                    <a href="#">License</a>
+                    <a href="#">Terms And Conditions</a>
+                </div>
+                <div class="one">
+                    <h1>SERVICES</h1>
+                    <a href="#">Email Marketing</a>
+                    <a href="#">Campaign</a>
+                    <a href="#">Branding</a>
+                    <a href="#">Offline</a>
+                </div>
+                <div class="one">
+                    <h1>ABOUT</h1>
+                    <a href="#">Benefits</a>
+                    <a href="/about-us">Team</a>
+                    <a href="#">Career</a>
+                    <a href="#">Our Story</a>
+                </div>
+                <div class="one">
+                    <h1>USEFUL LINKS</h1>
+                    <a href="#">Features</a>
+                    <a href="#">Home</a>
+                    <a href="/contact-use">Contacts</a>
+                    <a href="#">Trading</a>
+                </div>
+            </div>
+            <div class="footer-icon">
+                <i class="fa-brands fa-instagram" style="height: 0px;"></i>
+                <i class="fa-brands fa-facebook" style="height: 0px;"></i>
+                <i class="fa-brands fa-twitter" style="height: 0px;"></i>
+                <i class="fa-brands fa-telegram" style="height: 0px;"></i>
+                <i class="fa-brands fa-linkedin-in" style="height: 0px;"></i>
+                <p style="float: right;">email:<a href="#">zrading@gmail.com</a></p>
+            </div>
+        </div>
+    </footer>
+    <script src="./js/index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+
+        var ctx = new Chart(myChart, {
+            type: "doughnut",
+            data: {
+                labels: ["krsanu", "raut.p", "rajayu", "sandy0", "kkumar"],
+                datasets: [{
+                    label: 'The chart data is in percentage',
+                    data: ['15', '5', '25', '35', '20'],
+                    backgroundColor: ["#b91d47", "#00aba9", "#2b5797", "#e8c3b9", "#1e7145"],
+                    borderColor: ["#b91d47", "#00aba9", "#2b5797", "#e8c3b9", "#1e7145"]
+                }]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: "The chart data is in percentage"
+                },
+
+                legend: false,
+                legendCallback: function (myChart) {
+                    var ul = document.createElement('ul');
+                    var borderColor = myChart.data.datasets[0].borderColor;
+                    var dataValue = myChart.data.datasets[0].data;
+                    myChart.data.labels.forEach(function (label, index) {
+                        ul.innerHTML += `
+                        <li>
+                            <span style="background-color: ${borderColor[index]}";></span> ${label} ${dataValue[index]}
+                        </li>`;
+
+                    });
+                    return ul.outerHTML;
+                }
+
+            }
+        });
+        legend.innerHTML = ctx.generateLegend();
+    </script>
+
+</body>
+
+</html>

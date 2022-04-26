@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/2814ece5e8.js" crossorigin="anonymous"></script>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+
+
+    <link
+        href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i|Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+        integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+
+
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,700|Poiret+One" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,300,400,500,700" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Oswald:200,400,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+
+
+
+    <title>Home</title>
+</head>
+
+<body>
+
+    <div class="navbar">
+
+        <div class="logo">
+            <img src="./img2/logomain.png" alt="">
+        </div>
+        <ul>
+
+
+            <a class="button-navbar btn" href="/landingPage" role="button">
+                <span>Home</span>
+                <div class="icon">
+                    <i class="fa-solid fa-house"></i>
+                </div>
+            </a>
+            <a class="button-navbar btn" href="/traderlounge" role="button">
+                <span>Traders</span>
+                <div class="icon">
+                    <i class="fa-solid fa-copy"></i>
+                </div>
+            </a>
+            <a class="button-navbar btn" href="/discover" role="button">
+                <span>Discover</span>
+                <div class="icon">
+                    <i class="fa-solid fa-compass"></i>
+                </div>
+            </a>
+            <a class="button-navbar btn" href="/portfolio" role="button">
+                <span>Portfolio</span>
+                <div class="icon">
+                    <i class="fa-solid fa-chart-pie"></i>
+                </div>
+            </a>
+            <div class="bell">
+                <i class="fa-solid fa-bell"></i>
+            </div>
+
+            <div class="dropdown">
+                <div class="dropbtn"> <i class="fa-solid fa-user"></i>
+                </div>
+                <div class="dropdown-content">
+                    <a href="/profile">Profile</a>
+                    <a href="#">Wallet</a>
+                    <a href="#">Settings</a>
+
+                    <a href="/">Logout</a>
+                </div>
+            </div>
+        </ul>
+    </div>
+    <section class="page-category">
+        <div class="page-logo">
+            <i class="fa-solid fa-fire"></i>
+        </div>
+        <div class="page-type">Most Copied</div>
+
+        <input class="form-control search-box" id="myInput" type="text" placeholder="Search..">
+    </section>
+
+
+    <section>
+        <table id="myTable" class="searchable sortable">
+            <thead>
+                <tr>
+                    <!--When a header is clicked, run the sortTable function, with a parameter, 0 for sorting by names, 1 for sorting by country:-->
+                    <th onclick="sortTable(0)">Name</th>
+                    <th onclick="sortTable(0)">Place</th>
+                    <th onclick="sortTable(1)">Score</th>
+                    <th onclick="sortTable(1)">Return</th>
+                    <th onclick="sortTable(1)">P/L %</th>
+                    <th onclick="sortTable(1)">Copiers</th>
+                    <th onclick="sortTable(1)">Commission</th>
+                    <th onclick="sortTable(1)">Wishlist</th>
+                </tr>
+            </thead>
+            <!-- <tr>
+                <td>Berglunds snabbkop</td>
+                <td>Sweden</td>
+            </tr> -->
+            <tbody>
+                <tr class="sort">
+                    <td class="table-name">
+                        <span><img src="./img2/sanupic.jpg" alt=""></span>
+                        <span class="td-name"> Sanu Das</span>
+                        <p class="td-user-name">KrSanu02</p>
+                    </td>
+                    <td class="tb-place">Purnia</td>
+                    <td class="tb-score">5⭐</td>
+                    <td class="tb-return">85%</td>
+                    <td class="tb-pl">1.9</td>
+                    <td class="tb-copiers">958</td>
+                    <td class="tb-charge">25%</td>
+                    <td class="tb-wishlist"><i class="fa-solid fa-bookmark wish-btn" id="fa-watchlist" onclick=""></i></td>
+                </tr>
+                <tr class="sort">
+                    <td class="table-name">
+
+                        <span><img src="./img2/user1.jfif" alt=""></span>
+                        <span class="td-name">Parth Raut</span>
+                        <p class="td-user-name">rautparth02</p>
+                    </td>
+                    <td class="tb-country">Nagpur</td>
+                    <td class="tb-score">2⭐</td>
+                    <td class="tb-return">78%</td>
+                    <td class="tb-pl">1.7</td>
+                    <td class="tb-copiers">562</td>
+                    <td class="tb-charge">18%</td>
+                    <td class="tb-wishlist"><i class="fa-solid fa-bookmark" id="fa-watchlist"></i></td>
+                </tr>
+                <tr class="sort">
+                    <td class="table-name">
+
+                        <span><img src="./img2/user2.jfif" alt=""></span>
+                        <span class="td-name"> prashant Kumar Prakash</span>
+                        <p class="td-user-name">prashant01</p>
+                    </td>
+                    <td class="tb-country">Patna</td>
+                    <td class="tb-score">3⭐</td>
+                    <td class="tb-return">55%</td>
+                    <td class="tb-pl">2.2</td>
+                    <td class="tb-copiers">754</td>
+                    <td class="tb-charge">32%</td>
+                    <td class="tb-wishlist"><i class="fa-solid fa-bookmark" id="fa-watchlist"></i></td>
+                </tr>
+                <tr class="sort">
+                    <td class="table-name">
+
+                        <span><img src="./img2/user4.jfif" alt=""></span>
+                        <span class="td-name">Ayush Raj</span>
+                        <p class="td-user-name">rajayush01</p>
+                    </td>
+                    <td class="tb-country">muzaffarpur</td>
+                    <td class="tb-score">1⭐</td>
+                    <td class="tb-return">88%</td>
+                    <td class="tb-pl">2.12</td>
+                    <td class="tb-copiers">641</td>
+                    <td class="tb-charge">19%</td>
+                    <td class="tb-wishlist"><i class="fa-solid fa-bookmark" id="fa-watchlist"></i></td>
+                </tr>
+                <tr class="sort">
+                    <td class="table-name">
+
+                        <span><img src="./img2/user5.jfif" alt=""></span>
+                        <span class="td-name">Aditya Raj</span>
+                        <p class="td-user-name">rajAditya01</p>
+                    </td>
+                    <td class="tb-country">Bangalore</td>
+                    <td class="tb-score">4⭐</td>
+                    <td class="tb-return">69%</td>
+                    <td class="tb-pl">1.6</td>
+                    <td class="tb-copiers">415</td>
+                    <td class="tb-charge">13%</td>
+                    <td class="tb-wishlist"><i class="fa-solid fa-bookmark" id="fa-watchlist"></i></td>
+                </tr>
+                <tr class="sort">
+                    <td class="table-name">
+
+                        <span><img src="./img2/user6.jfif" alt=""></span>
+                        <span class="td-name">Shubham Shandilya</span>
+                        <p class="td-user-name">frolicsandy01</p>
+                    </td>
+                    <td class="tb-country">New Delhi</td>
+                    <td class="tb-score">2⭐</td>
+                    <td class="tb-return">95%</td>
+                    <td class="tb-pl">1.55</td>
+                    <td class="tb-copiers">251</td>
+                    <td class="tb-charge">8%</td>
+                    <td class="tb-wishlist"><i class="fa-solid fa-bookmark" id="fa-watchlist"></i></td>
+                </tr>
+                <tr class="sort">
+                    <td class="table-name">
+
+                        <span><img src="./img2/user7.jfif" alt=""></span>
+                        <span class="td-name">Rahul Raj</span>
+                        <p class="td-user-name">01rahul</p>
+                    </td>
+                    <td class="tb-country">Noida</td>
+                    <td class="tb-score">1⭐</td>
+                    <td class="tb-return">30%</td>
+                    <td class="tb-pl">1.33</td>
+                    <td class="tb-copiers">102</td>
+                    <td class="tb-charge">5%</td>
+                    <td class="tb-wishlist"><i class="fa-solid fa-bookmark" id="fa-watchlist"></i></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </section>
+    <footer>
+
+        <div class="whole">
+            <div class="next">
+                <div class="one">
+                    <h1>LEGAL</h1>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms Of Use</a>
+                    <a href="#">License</a>
+                    <a href="#">Terms And Conditions</a>
+                </div>
+                <div class="one">
+                    <h1>SERVICES</h1>
+                    <a href="#">Email Marketing</a>
+                    <a href="#">Campaign</a>
+                    <a href="#">Branding</a>
+                    <a href="#">Offline</a>
+                </div>
+                <div class="one">
+                    <h1>ABOUT</h1>
+                    <a href="#">Benefits</a>
+                    <a href="/about-us">Team</a>
+                    <a href="#">Career</a>
+                    <a href="#">Our Story</a>
+                </div>
+                <div class="one">
+                    <h1>USEFUL LINKS</h1>
+                    <a href="#">Features</a>
+                    <a href="#">Home</a>
+                    <a href="contact-use">Contacts</a>
+                    <a href="#">Trading</a>
+                </div>
+            </div>
+            <div class="icon">
+                <i class="fa-brands fa-instagram" style="height: 0px;"></i>
+                <i class="fa-brands fa-facebook" style="height: 0px;"></i>
+                <i class="fa-brands fa-twitter" style="height: 0px;"></i>
+                <i class="fa-brands fa-telegram" style="height: 0px;"></i>
+                <i class="fa-brands fa-linkedin-in" style="height: 0px;"></i>
+                <p style="float: right;">email:<a href="#">zrading@gmail.com</a></p>
+            </div>
+        </div>
+    </footer>
+    <link rel="stylesheet" href="./css/view-all.css">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <script src="./js/view-all.js"></script>
+    <script> </script>
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signUp/In</title>
+    <style>
+        body {
+            background-image: url(/img/img.jpg);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+
+        .wrapper {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        a {
+            display: block;
+            width: 276px;
+            height: 73px;
+            line-height: 74px;
+            font-size: 25px;
+            font-family: sans-serif;
+            text-decoration: none;
+            color: rgb(252, 52, 52);
+            border: 2px solid rgb(10, 247, 255);
+            letter-spacing: 2px;
+            text-align: center;
+            position: relative;
+            right: 513px;
+            transition: all .35s;
+        }
+
+        a span {
+            position: relative;
+            z-index: 2;
+        }
+
+        a:after {
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: #ff003b;
+            transition: all .35s;
+        }
+
+        a:hover {
+            color: #fff;
+        }
+
+        a:hover:after {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+</body>
+<div class="wrapper">
+    <a href="/login"><span>Signup/in as traders</span></a>
+    <br>
+    <br>
+    <br>
+    <a href="/login"><span>SignUp/in as User</span></a>
+    
+</div>
+
+</html>

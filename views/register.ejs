@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+
+<head>
+  <title>Sign Up</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <link rel="stylesheet" type="text/css" href="/css/signup.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+    integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+
+</head>
+
+<body class="body">
+  <div class="login-page">
+    <div class="form">
+      <!-- <form id="form" > -->
+        <lottie-player src="https://assets10.lottiefiles.com/private_files/lf30_gonpfxdh.json" background="transparent"
+          speed="1" style="width: 300px; height: 300px;" loop autoplay></lottie-player>
+
+        <form id="form" action="/register" method="post">
+          <div class="input-control">
+           
+            <input id="username" name="username" type="text" placeholder="&#xf007;  Name" required>
+            <div class="error"></div>
+          </div>
+          <div class="input-control">
+            <input id="email" name="email" type="text" placeholder="&#xf002;  email" required>
+            <div class="error"></div>
+          </div>
+          <div class="input-control">
+            <input id="password" name="password" type="password" placeholder="&#xf023;  password" required>
+            <div class="error"></div>
+          </div>
+          <div class="input-control">
+            <input id="password2" name="password2" type="password" placeholder="&#xf023;  Confirm password" required>
+            <div class="error"></div>
+          </div>
+          <!-- {{!-- <button type="submit" id="signupbtn" >Sign Up</button> --}}
+           {{!-- <a href="/index2" id="signupbtn" ><span>SignUp/in as User</span></a> --}} -->
+    
+         <a href="/index2"> <button type="submit" id="signupbtn" >Sign up</button></a>
+          <!-- <a href = "index2.html">Sign up</a> -->
+        </form>
+
+  <script defer src="/js/signup.js"></script>
+</html>
